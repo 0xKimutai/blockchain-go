@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+
+{% block title %} Welcome to blogger{% endblock %}
+
+{% block content %}
+    <div class="grid grid-cols-3 gap-6">
+
+        {% for post in posts %}
+            {% include "blog/partials/post.html" %}
+        {% empty %}
+            <div class="col-span-3 p-6 bg-gray-100">
+                <h2 class="text-xl">No posts available.</h2>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
